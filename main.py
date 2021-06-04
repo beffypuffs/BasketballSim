@@ -1,7 +1,7 @@
 import random
 import Team
 import Player
-
+import Coach
 
 def name_list_maker(names):
     i = 0
@@ -30,10 +30,10 @@ def possession(offense, defense):  # Rating has no affect at this point, this fu
     points = random.randrange(2, 4)  # Randomly selects if it is a 2 or a 3
     do_they_score = random.randrange(0, 101)
     if points == 2:
-        if do_they_score <= 45:  # 45% chance to score if its a 2 pointer
+        if do_they_score <= 47:  # 45% chance to score if its a 2 pointer
             offense.score += points
     else:
-        if do_they_score <= 33: # 33% chance if its a 3
+        if do_they_score <= 36: # 36% chance if its a 3
             offense.score += points
 
 
@@ -55,7 +55,7 @@ def game(team1, team2):
         temp = offense
         offense = defense
         defense = temp
-        time_left -= random.randrange(15, 25)
+        time_left -= random.randrange(10, 25)
         if time_left <= 0:
             quarter += 1
             time_left = 720
@@ -73,6 +73,9 @@ Mavericks.players.append(Player.Player("Hardaway jr.", "Tim", 88, 82))
 Mavericks.players.append(Player.Player("Finney-Smith", "Dorian", 95, 82))
 Mavericks.players.append(Player.Player("Pingus", "Tingus", 82, 75))
 Mavericks.players.append(Player.Player("Marjonavic", "Boban", 80, 70))
+print(Mavericks.players[0].first)
+Mavericks.coach = Coach.Coach("Carlisle", "Rick", 90, 90)
+
 
 Clippers.players.append(Player.Player("Jackson", "Reggie", 84, 76))
 Clippers.players.append(Player.Player("George", "Paul", 95, 88))
