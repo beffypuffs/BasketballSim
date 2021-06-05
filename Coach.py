@@ -4,3 +4,9 @@ class Coach:
         self.first = first
         self.offense = offense
         self.defense = defense
+        self.first_option = None
+        self.second_option = None
+        self.third_option = None
+        self.fourth_option = None
+        self.fifth_option = None
+        self.sixth_man = None

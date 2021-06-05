@@ -30,7 +30,7 @@ def possession(offense, defense):  # Rating has no affect at this point, this fu
     points = random.randrange(2, 4)  # Randomly selects if it is a 2 or a 3
     do_they_score = random.randrange(0, 101)
     if points == 2:
-        if do_they_score <= 47:  # 45% chance to score if its a 2 pointer
+        if do_they_score <= 47:  # 47% chance to score if its a 2 pointer
             offense.score += points
     else:
         if do_they_score <= 36: # 36% chance if its a 3
@@ -64,24 +64,31 @@ def game(team1, team2):
 
 # If you haven't done anything with python this is basically the start of main in other languages
 
+
 Mavericks = Team.Team("Mavericks", 90, 78)
 Clippers = Team.Team("Clippers", 88, 87)
 
 # These ratings are basically random
 Mavericks.players.append(Player.Player("Doncic", "Luka", 95, 82))
 Mavericks.players.append(Player.Player("Hardaway jr.", "Tim", 88, 82))
-Mavericks.players.append(Player.Player("Finney-Smith", "Dorian", 95, 82))
+Mavericks.players.append(Player.Player("Finney-Smith", "Dorian", 80, 80))
 Mavericks.players.append(Player.Player("Pingus", "Tingus", 82, 75))
 Mavericks.players.append(Player.Player("Marjonavic", "Boban", 80, 70))
-print(Mavericks.players[0].first)
-Mavericks.coach = Coach.Coach("Carlisle", "Rick", 90, 90)
-
+#print(Mavericks.players[0].first)
+Mavericks.coach = Coach.Coach("Carlisle", "Rick", 92, 87)
+Mavericks.coach.first_option = Mavericks.players[0]
+Mavericks.coach.second_option = Mavericks.players[1]
+Mavericks.coach.third_option = None
 
 Clippers.players.append(Player.Player("Jackson", "Reggie", 84, 76))
 Clippers.players.append(Player.Player("George", "Paul", 95, 88))
 Clippers.players.append(Player.Player("Leonard", "Kawhi", 94, 94))
 Clippers.players.append(Player.Player("Batum", "Nicholas", 80, 82))
 Clippers.players.append(Player.Player("Morris", "Marcus", 82, 80))
+Clippers.coach = Coach.Coach("Lue", "Ty", 88, 85)
+Clippers.coach.first_option = Clippers.players[2]
+Clippers.coach.second_option = Clippers.players[1]
+Clippers.coach.third_option = Clippers.players[0]
 
 Clippers.lineup = Clippers.players
 Mavericks.lineup = Mavericks.players
